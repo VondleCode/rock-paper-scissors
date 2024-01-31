@@ -11,7 +11,7 @@ function getComputerChoice() {
 }
 
 function playGame() {
-    const playerSelection = player;
+    const playerSelection = player.toLowerCase();
     const computerSelection = getComputerChoice();
     console.log(playRound(playerSelection, computerSelection));
     gameCount++;
@@ -19,6 +19,8 @@ function playGame() {
         console.log("Congratulations, you win " + playerWins + " to " + computerWins + ".")
     } else if (gameCount === 5 && playerWins < computerWins) {
         console.log("Oh no! You lose " + playerWins + " to " + computerWins + ".")
+    } else if (gameCount === 5 && playerWins === computerWins) {
+        console.log("It's a Draw!" + playerWins + " to " + computerWins + ".")
     } else if (gameCount < 5) {
         player = prompt("Next Round!");
     }
